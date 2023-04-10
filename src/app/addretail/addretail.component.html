@@ -1,0 +1,110 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+       <h1 style="color:aliceblue">Welcome Admin..!!</h1>
+       <div class="d-flex">
+          <button  type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-success" (click)="Addvendor()">Add Retailer</button>
+          <a  routerLink="" class="btn btn-info" style="margin-left: 25px;"><i class="fa-solid fa-arrow-right-from-bracket"  ></i></a>
+       </div>
+  </div>
+</nav>
+
+
+                     <!-- Modal  vendor-->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Be a Partner with VP Mart</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+
+          <form [formGroup]= "Vendor" >
+            <div class="vendor">
+
+              <mat-form-field appearance="fill">
+              <mat-label>Shop Name</mat-label>
+                <input matInput formControlName="Shopname">
+              </mat-form-field>
+              <p *ngIf= "Check['Shopname'].errors" style="color: red;" >Shopname is required</p>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Retailer Name</mat-label>
+                <input matInput formControlName="Vendorname">
+              </mat-form-field>
+              <p *ngIf= "Check['Vendorname'].errors" style="color: red;" >Retailer Name is required</p>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Email ID</mat-label>
+                <input matInput formControlName="EmailID">
+              </mat-form-field>
+              <p *ngIf= "Check['EmailID'].errors" style="color: red;" >Email ID is required</p>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Mobile No</mat-label>
+                <input matInput formControlName="Mobileno">
+              </mat-form-field>
+              <p *ngIf= "Check['Mobileno'].errors" style="color: red;" >Mobile number is required</p>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="Pass">
+              </mat-form-field>
+              <p *ngIf= "Check['Pass'].errors" style="color: red;" >Enter Password</p>
+
+
+
+              <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="Ad">
+              </mat-form-field>
+              <p *ngIf= "Check['Ad'].errors" style="color: red;" >Enter Your Address</p>
+
+
+    <br>
+              <mat-checkbox class="example-margin">I agree with the Privacy Policy..!</mat-checkbox>
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+              <button type="button" *ngIf= "showAdd" class="btn btn-primary" (click)= "AddvendorDetails()" >Add</button>
+              <button type="button" *ngIf= "showupdate" class="btn btn-primary" (click)= "updateVendor()" >Update</button>
+            </div>
+
+          </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+  <div class="abcd">
+    <table class="table mt-3">
+        <thead>
+            <tr>
+              <th style="display:none" scope="col">id</th>
+                <th scope="col">Shop Name</th>
+                <th scope="col">Owner Name</th>
+                <th scope="col">EmailId</th>
+                <th scope="col">Mobile No.</th>
+                <th scope="col">Password</th>
+                <th scope="col">Address</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor= "let i of vendorlist">
+            <td style="display:none" >{{i._id}}</td>
+                <td>{{i.Shopname}}</td>
+                <td>{{i.Vendorname}}</td>
+                <td>{{i.EmailID}}</td>
+                <td>{{i.Mobileno}}</td>
+                <td>{{i.Pass}}</td>
+                <td>{{i.Ad}}</td>
+                <td><button (click)= "onEdit(i)" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-info"><i class="fa-solid fa-pencil"></i></button>
+                   <button  class="btn btn-danger mx-3" (click)= "OnDelete(i._id)" ><i class="fa-solid fa-trash"></i></button></td>
+
+
+            </tr>
+        </tbody>
+    </table>

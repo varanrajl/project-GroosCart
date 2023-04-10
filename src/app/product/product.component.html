@@ -1,0 +1,94 @@
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+
+     <h1><span>Groos</span>cart</h1>
+       <div class="d-flex">
+          <button  type="button"  data-bs-toggle="modal" data-bs-target="#addproducts" class="btn btn-success" (click)="clickAddProducts()">Add Products</button>
+          <a  routerLink="" class="btn btn-info" style="margin-left: 25px;"><i class="fa-solid fa-arrow-right-from-bracket"  ></i></a>
+       </div>
+  </div>
+</nav><div class="modal fade" id="addproducts" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLabel">Add Products</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+              <div class="modal-body">
+
+
+
+
+                 <form [formGroup]="newproduct">
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Image</mat-label>
+                    <input matInput formControlName="image">
+                  </mat-form-field><br>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Product Name</mat-label>
+                    <input matInput formControlName="name">
+                  </mat-form-field><br>
+
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Category</mat-label>
+                    <input matInput formControlName="category">
+                  </mat-form-field><br/>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <input matInput formControlName="description">
+                  </mat-form-field><br/>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>M.R.P</mat-label>
+                    <input matInput formControlName="price">
+                  </mat-form-field><br>
+
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">Close</button>
+                      <button type="button" *ngIf= "showAdd" class="btn btn-primary" (click)= "AddProductsDetails()" >Add</button>
+                      <button type="button" *ngIf= "showupdate" class="btn btn-primary" (click)= "UpdateProducts()" >Update</button>
+                      </div>
+
+
+              </form>
+              </div>
+              </div>
+              </div>
+              </div>
+              <table class="table mt-3">
+                  <thead>
+                      <tr>
+
+                          <th scope="col">Image</th>
+                          <th scope="col">Product Name</th>
+                          <th scope="col">Category</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Action</th>
+                      </tr>
+                  </thead>
+                    <tbody>
+                      <tr *ngFor="let i of productsdata">
+
+
+
+                          <td><img src="{{i.image}}" width="150px" height="150px"></td>
+
+                          <td [width]="200">{{i.name}}</td>
+
+                          <td>{{i.category}}</td>
+
+                          <td [width]="500">{{i.description}}</td>
+
+                          <td [width]="150">M.R.P  Rs. {{i.price}}</td>
+
+                          <td><button (click)= "onEdit(i)" data-bs-toggle="modal" data-bs-target="#addproducts" class="btn btn-info"><i class="fa-solid fa-pencil"></i></button>
+                               <button  class="btn btn-danger mx-3" (click)= "OnDelete(i._id)" ><i class="fa-solid fa-trash"></i></button></td>
+
+                        </tr>
+                    </tbody>
+                </table>

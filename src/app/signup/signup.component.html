@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <div class="card">
+   <div class="text-center">
+<h1>Signup</h1>
+<h6>Register Yourself</h6>
+   </div>
+   <form [formGroup]="signupForm" (ngSubmit)="signUp(signupForm.value)">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Full Name</label>
+        <input type="text" formControlName="Fullname" name="Fullname" class="form-control" id="exampleInputPassword1">
+        <div *ngIf="firstname.invalid&&(firstname.touched||firstname.dirty)">
+          <span *ngIf="firstname.errors?.required">First Name is required</span>
+         <span *ngIf="firstname.errors?.minLength">Minimum three charactrer </span>
+</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
+        <input type="text" formControlName="mobile" class="form-control" id="exampleInputPassword1">
+        <div *ngIf="Mobile.invalid&&(Mobile.touched||firstname.dirty)">
+          <span *ngIf="Mobile.errors?.required">Mobile no is required</span>
+</div>
+        </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div *ngIf="Email.invalid&&(Email.touched||Email.dirty)">
+          <span *ngIf="Email.errors?.required">Email is required</span>
+</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+        <div *ngIf="Password.invalid&&(Password.touched||Email.dirty)">
+          <span *ngIf="Password.errors?.required">password is required</span>
+          <span *ngIf="Password.errors?.pattern">8 char Above and one special Char</span>
+</div>
+      </div>
+
+      <button type="submit" [disabled]="signupForm.invalid"   class="btn btn-primary">signup</button>
+    </form>
+    <a style="color:#fff;margin-top: 10px;" routerLink="/login" >Already Logged in? click to login!!</a>
+    </div>
+  </div>
+</div>
+</div>

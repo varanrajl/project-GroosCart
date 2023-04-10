@@ -1,0 +1,53 @@
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#"><span>Groos</span>Cart</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/Home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/login">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/loginretail">Retailer</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+  <div class="row">
+
+    <div class="card">
+      <div class="text-center">
+          <h1>Retailer Login</h1>
+          <h6>
+              Please enter Email & Password !!
+          </h6>
+      </div>
+          <form [formGroup]="vendorlogin"  (ngSubmit)="login()">
+
+
+                  <mat-form-field appearance="fill">
+                  <mat-label >EmailID</mat-label>
+                  <input matInput type="email">
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                  <mat-label >Password</mat-label>
+                  <input matInput type="Password">
+                  </mat-form-field>
+
+
+              <div class="footer">
+
+                <button type="submit" class="btn btn-primary">Login</button><br><br>
+                Be a Partner With GROOSCART !!<br><br>
+
+              </div>
+         </form>
+</div>
+</div>
+
+</body>

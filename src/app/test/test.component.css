@@ -1,0 +1,310 @@
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+input{
+  width: 450px;
+}
+mat-toolbar h4{
+  margin-right: 200px;
+}
+
+mat-toolbar button{
+  display: inline;
+  text-decoration: none;
+  justify-content: space-between;
+  padding: 7px;
+  color: white;
+  font-size: 25px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+mat-toolbar button:hover{
+ transform: scale(1.2);
+}
+.d-flex{
+  display: flex;
+  float: right;
+  padding: 10px;
+  margin-right: 0;
+  margin-left: 35%;
+}
+.fa-magnifying-glass{
+  margin-left: -2%;
+  color:black;
+  visibility: visible;
+  text-decoration: none;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: purple;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: #FFF;
+}
+
+h3 {
+	font-size: 30px;
+	text-align: center;
+	color: #FFF;
+}
+
+h3 a {
+	color: #FFF;
+}
+
+a {
+	color: #FFF;
+}
+
+h1 {
+	margin-top: 100px;
+	text-align:center;
+	font-size:60px;
+	font-family: 'Bree Serif', 'serif';
+	}
+
+
+.items{
+  margin-left: 40px;
+  justify-content: space-between;
+  text-align: center;
+}
+#abc{
+  border: 1px solid black;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+  width: 250px;
+
+}
+button{
+border-radius: 5px;
+padding: 2px;
+color: white;
+width: 100%;
+font-size: 15px;
+}
+button:hover{
+  background-color: green;
+  border: none;
+  outline: none;
+}
+.fa-plus{
+  color: aliceblue;
+  float: right;
+  padding: 2px;
+}
+h2{
+  text-align: center;
+}
+#abc:hover{
+  background-color: transparent;
+  transform: scale(1.1);
+
+}
+.items img:hover{
+transform: scale(1.04);
+}
+
+.d-flex .btnn
+{
+cursor: pointer;
+color: #fff;
+font-size: 14px;
+letter-spacing: 1px;
+padding: 5px 20px;
+border: 1px solid black;
+background: transparent;
+text-decoration: none;
+text-align: center;
+margin: 5px;
+border-radius: 15px;
+
+}
+.d-flex  .btnn:hover{
+transform: scale(1.16);
+}
+.menu,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+/* Main level */
+.menu {
+  margin: 0px 0px;
+  width: 100%;
+  /* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
+
+}
+
+.menu > li {
+  background: #34495e;
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+}
+
+.menu a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Arial, Helvetica;
+  font-size: 14px;
+}
+
+.menu li:hover {
+  background: #e74c3c;
+}
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 6.2em;
+}
+
+/* Dropdown */
+.submenu {
+  position: absolute;
+  width: 200px;
+  left: 50%; margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+}
+
+.submenu li {
+  background-color: #34495e;
+  position: relative;
+  overflow: hidden;
+}
+
+.submenu > li > a {
+  padding: 1em 2em;
+}
+
+.submenu > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+
+/* Odd stuff */
+.submenu > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}
+
+/* Even stuff */
+.submenu > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.submenu li {
+  transition: .2s ease transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu > li:hover .submenu li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);
+}

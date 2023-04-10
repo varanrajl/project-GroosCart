@@ -1,0 +1,13 @@
+h1{
+  font-size: 30px;
+  color:white;
+}
+span
+{
+  color:red;
+  font-weight: 1000;
+}
+.navbar{
+  background-color: rgb(35, 1, 54);
+}
+

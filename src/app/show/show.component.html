@@ -1,0 +1,78 @@
+<body>
+  <mat-toolbar class="mat-elevation-z8">
+
+
+
+    <h4><span>Groos</span>cart</h4>
+
+
+    <input type="search" style="border-radius: 10px;border:none;outline:none;" placeholder="Search" [(ngModel)]="searchTerm" (keyup)="Search($event)"><i class="fa-solid fa-magnifying-glass"></i>
+
+    <div class="d-flex">
+
+        <button routerLink="/cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div style="font-size: 10px; padding: 3px; margin: 0;" class="btn btn-danger">{{totalItem}}</div>
+          Cart..</button>
+        <button routerLink=""><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+
+
+            </div>
+  </mat-toolbar>
+
+  <ul class="menu cf">
+    <li><a (click)="filter('')">All products</a></li>
+    <li>
+      <a href="">Groceries </a>
+      <ul class="submenu">
+        <li><a (click)="filter('Fruits')">Fruits</a></li>
+        <li><a (click)="filter('vegetables')">Vegetables</a></li>
+        <li><a (click)="filter('Snacks')">snacks</a></li>
+        <li><a (click)="filter('beverage')">Beverage</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="">Electronics</a>
+      <ul class="submenu">
+        <li><a (click)="filter('Mobile')">MOBILE</a></li>
+        <li><a (click)="filter('Tv')">TV</a></li>
+        <li><a (click)="filter('Laptop')">LAPTOP</a></li>
+        <li><a (click)="filter('Watch')">WATCH</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="">FASHION</a>
+      <ul class="submenu">
+        <li><a (click)="filter('Men')">MEN</a></li>
+        <li><a (click)="filter('Women')">WOMEN</a></li>
+        <li><a (click)="filter('kids')">KIDS</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="">Beauty</a>
+      <ul class="submenu">
+        <li><a (click)="filter('Skin')">SKIN</a></li>
+        <li><a (click)="filter('Hair')">HAIR</a></li>
+        <li><a (click)="filter('Makeup')">MAKEUP</a></li>
+        <li><a (click)="filter('Fitness')">FITNESS</a></li>
+        <li><a (click)="filter('Perfume')">PERFUME</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <div class="items">
+    <div id="abc"  *ngFor= "let item of filterCategory | filter:searchKey:'name'">
+
+      <img src={{item.image}} width="220px" height="180px"><br><br><br>
+
+      <h3><b>{{item.name}}</b></h3>
+
+
+
+      <h5>M.R.P : Rs.<b> {{item.price}} </b></h5>
+
+      <button class="btn btn-primary" (click)=addtocart(item)>Add to cart<i class="fa-solid fa-plus"></i></button>
+
+    </div>
+    </div>
